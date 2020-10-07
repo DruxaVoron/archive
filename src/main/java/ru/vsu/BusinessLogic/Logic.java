@@ -1,5 +1,6 @@
 package ru.vsu.BusinessLogic;
 
+import ru.vsu.DAO.DAO;
 import ru.vsu.DAO.DAOList;
 import ru.vsu.Domain.File;
 import ru.vsu.Domain.FileArchive;
@@ -9,7 +10,16 @@ import java.util.*;
 public class Logic{
 
 //    private static List<FileArchive> storage = new DAOList().getStorage();
-    private DAOList dao = new DAOList();
+    private DAO<FileArchive> dao;
+
+    public Logic(DAO<FileArchive> dao) {
+        this.dao = dao;
+    }
+
+//    private DAOList dao = new DAOList();
+    public List<FileArchive> getAll(){
+        return dao.getStorage();
+    }
 
     public boolean createFileArchive(String name){
         if (!dao.isFileArchiveNameinStorage(name)){
@@ -22,7 +32,7 @@ public class Logic{
 
     private boolean createFileinArchive(String filearchivename, File file) {
         if (!dao.isFileArchiveNameinStorage(filearchivename)){
-            FileArchive fileArchive = new FileArchive(filearchivename, Arrays.asList(file));
+            FileArchive fileArchive = new FileArchive(filearchivename, file);
             dao.addFileArchivetoStorage(fileArchive);
             return true;
         } else {
@@ -84,8 +94,8 @@ public class Logic{
         else return Arrays.asList(0, null);
     }
 
-    public boolean deleteFilebyName(String filename) {
-        return dao.removeFilebyNameinStorage(filename);
+    public boolean deleteFileinFileArchivebyName(String filearchivename, String filename) {
+        return dao.removeFileinFileArchivebyNameinStorage(filearchivename, filename);
     }
 
     public List deleteFilesbyList(List<File> files) {

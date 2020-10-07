@@ -1,6 +1,7 @@
 package ru.vsu.Domain;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class FileArchive {
@@ -13,9 +14,16 @@ public class FileArchive {
         files = new ArrayList<>();
     }
 
+    public FileArchive(String name, File file) {
+        this.name = name;
+        files = new ArrayList<>();
+        files.add(file);
+    }
+
     public FileArchive(String name, List<File> files) {
         this.name = name;
-        this.files = files;
+        this.files = new ArrayList<>();
+        this.files.addAll(files);
     }
 
     public String getName() {
@@ -30,6 +38,10 @@ public class FileArchive {
         return files;
     }
 
+    private String filestoString(){
+        return files.toString();
+    }
+
     public void setFiles(List<File> files) {
         this.files = files;
     }
@@ -38,7 +50,16 @@ public class FileArchive {
         files.add(file);
     }
 
+
     public void addFiles(List<File> newfiles){
         files.addAll(newfiles);
+    }
+
+    @Override
+    public String toString() {
+        return "FileArchive{" +
+                "name='" + name + '\'' +
+                ", files=" + filestoString() +
+                '}';
     }
 }

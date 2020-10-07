@@ -4,67 +4,59 @@ import ru.vsu.BusinessLogic.Logic;
 import ru.vsu.Domain.FileArchive;
 
 import java.util.Date;
+import java.util.InputMismatchException;
 import java.util.List;
+import java.util.Scanner;
 
-class UI {
-
-    private Logic logic = new Logic();
+public class UI {
 
 
-    public void createFileArchive(String name){
-        if (logic.createFileArchive(name))
-            System.out.println("Created successful");
-        else
-            System.out.println("FileArchive with this name already exist");
+    private View view;
+    private Scanner scanner = new Scanner(System.in);
+//    private Logic logic = new Logic();
 
+    public UI(View view) {
+        this.view = view;
+    }
+
+    public void show(){
+        while (true){
+            System.out.println("MAIN MENU");
+            System.out.println("1 - show all archives");
+            System.out.println("2 - create new archive");
+            System.out.println("3 - create new file in existing archive");
+            System.out.println("4 - delete archive");
+            System.out.println("5 - delete file");
+            System.out.println("0 - exit");
+
+            try {
+                int commandcode = scanner.nextInt();
+                switch (commandcode){
+                    case 1:
+                        view.showAll();
+                        break;
+                    case 2:
+                        view.createFileArchive();
+                        break;
+                    case 3:
+                        view.createFileinArchive();
+                        break;
+                    case 4:
+                        view.deleteFileArchivebyName();
+                        break;
+                    case 5:
+                        view.deleteFileinFileArchivebyName();
+                        break;
+                    case 0:
+                        return;
+                }
+            } catch (InputMismatchException e){
+                System.out.println("Incorrect input. Please enter any number above");
+                break;
+            }
+        }
     }
 
 
-    public void createFileinArchive(String filearchivename, String filename, Date creationdate) {
-        if (logic.createFileinArchive(filearchivename, filename, creationdate))
-            System.out.println("Created successful");
-        else
-            System.out.println("File with such name already exist in this FileArchive. Please rename the File");
-    }
-
-
-    public void createFilesinArchive(String filearchivename, List files) {
-
-    }
-
-
-    public void createFile(String filename, Date creationdate) {
-
-    }
-
-
-    public void createFilesbyList(List files) {
-
-    }
-
-
-    public FileArchive getFileArchivebyName(String filearchivename) {
-        return null;
-    }
-
-
-    public boolean deleteFileArchivebyName(String filearchivename) {
-        return false;
-    }
-
-
-    public List deleteFileArchivesbyList(List filearchives) {
-        return null;
-    }
-
-
-    public boolean deleteFilebyName(String filename) {
-        return false;
-    }
-
-
-    public List deleteFilesbyList(List files) {
-        return null;
-    }
 
 }

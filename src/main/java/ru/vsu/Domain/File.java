@@ -28,4 +28,11 @@ public class File {
         this.creationdate = creationdate;
     }
 
+    @Override
+    public String toString() {
+        return "File{" +
+                "name='" + name + '\'' +
+                ", creationdate=" + creationdate +
+                '}';
+    }
 }

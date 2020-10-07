@@ -8,9 +8,25 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Stream;
 
-public class DAOList implements DAO {
+public class DAOList implements DAO<FileArchive> {
+
+    private static DAOList instanse;
 
     private List<FileArchive> storage = new ArrayList<>();
+
+    public DAOList() {
+    }
+
+    public static DAOList getInstanse() {
+        if (instanse == null){
+            instanse = new DAOList();
+        }
+        return instanse;
+    }
+
+    private void init(){
+
+    }
 
     public List<FileArchive> getStorage() {
         return storage;
@@ -62,6 +78,19 @@ public class DAOList implements DAO {
         boolean result = false;
         for (FileArchive filearchive : storage) {
             result = filearchive.getFiles().removeIf(file -> file.getName().equals(name));
+            if (result)
+                break;
+        }
+        return result;
+    }
+
+    public boolean removeFileinFileArchivebyNameinStorage(String filearchivename, String filename){
+        boolean result = false;
+//        storage.stream().filter(fileArchive -> fileArchive.getName().equals(filearchivename));
+        for (FileArchive filearchive : storage) {
+            if (filearchive.getName().equals(filearchivename)){
+                result = filearchive.getFiles().removeIf(file -> file.getName().equals(filename));
+            }
             if (result)
                 break;
         }
