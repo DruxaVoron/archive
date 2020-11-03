@@ -1,7 +1,6 @@
 package ru.vsu.BusinessLogic;
 
 import ru.vsu.DAO.DAO;
-import ru.vsu.DAO.DAOList;
 import ru.vsu.Domain.File;
 import ru.vsu.Domain.FileArchive;
 
@@ -9,7 +8,6 @@ import java.util.*;
 
 public class Logic{
 
-//    private static List<FileArchive> storage = new DAOList().getStorage();
     private DAO<FileArchive> dao;
 
     public Logic(DAO<FileArchive> dao) {
@@ -22,21 +20,21 @@ public class Logic{
     }
 
     public boolean createFileArchive(String name){
-        if (!dao.isFileArchiveNameinStorage(name)){
+        if (!dao.isFileArchiveNameInStorage(name)){
             FileArchive fileArchive = new FileArchive(name);
-            dao.addFileArchivetoStorage(fileArchive);
+            dao.addFileArchiveToStorage(fileArchive);
             return true;
         } else
             return false;
     }
 
     private boolean createFileinArchive(String filearchivename, File file) {
-        if (!dao.isFileArchiveNameinStorage(filearchivename)){
+        if (!dao.isFileArchiveNameInStorage(filearchivename)){
             FileArchive fileArchive = new FileArchive(filearchivename, file);
-            dao.addFileArchivetoStorage(fileArchive);
+            dao.addFileArchiveToStorage(fileArchive);
             return true;
         } else {
-            FileArchive filearchive = dao.getFileArchivebyNameinStorage(filearchivename);
+            FileArchive filearchive = dao.getFileArchiveByNameInStorage(filearchivename);
             boolean result = filearchive.getFiles().stream().anyMatch(filefounder -> filefounder.getName().equals(file.getName()));
             if (result)
                 return false;
@@ -47,23 +45,23 @@ public class Logic{
         }
     }
 
-    public boolean createFileinArchive(String filearchivename, String filename, Date creationdate) {
-        return createFileinArchive(filearchivename, new File(filename, creationdate));
+    public boolean createFileinArchive(String filearchivename, String filename) {
+        return createFileinArchive(filearchivename, new File(filename));
     }
 
     public void createFilesinArchive(String filearchivename, List<File> files) {
-        if (!dao.isFileArchiveNameinStorage(filearchivename)){
+        if (!dao.isFileArchiveNameInStorage(filearchivename)){
             FileArchive fileArchive = new FileArchive(filearchivename, files);
-            dao.addFileArchivetoStorage(fileArchive);
+            dao.addFileArchiveToStorage(fileArchive);
 // добавить проверку на то что файлы с названиями уже существуют
         } else {
-            FileArchive filearchive = dao.getFileArchivebyNameinStorage(filearchivename);
+            FileArchive filearchive = dao.getFileArchiveByNameInStorage(filearchivename);
             filearchive.addFiles(files);
         }
     }
 
-    public boolean createFile(String filename, Date creationdate) {
-        return createFileinArchive("untitled", new File(filename, creationdate));
+    public boolean createFile(String filename) {
+        return createFileinArchive("untitled", new File(filename));
     }
 
     public void createFilesbyList(List<File> files) { //должен быть boolean как тот что выше
@@ -71,18 +69,18 @@ public class Logic{
     }
 
     public FileArchive getFileArchivebyName(String filearchivename) {
-        return dao.getFileArchivebyNameinStorage(filearchivename);
+        return dao.getFileArchiveByNameInStorage(filearchivename);
     }
 
     public boolean deleteFileArchivebyName(String filearchivename) {
-        return dao.removeFileArchivebyNameinStorage(filearchivename);
+        return dao.removeFileArchiveByNameInStorage(filearchivename);
     }
 
     public List deleteFileArchivesbyList(List<FileArchive> filearchives) {
         List<FileArchive> notfound = new ArrayList<>();
         for (Iterator<FileArchive> iter = filearchives.iterator(); iter.hasNext();) {
             FileArchive farch = iter.next();
-            boolean result = dao.removeFileArchivebyNameinStorage(farch.getName());
+            boolean result = dao.removeFileArchiveByNameInStorage(farch.getName());
             if (result){
                 iter.remove();
             } else {
@@ -95,14 +93,14 @@ public class Logic{
     }
 
     public boolean deleteFileinFileArchivebyName(String filearchivename, String filename) {
-        return dao.removeFileinFileArchivebyNameinStorage(filearchivename, filename);
+        return dao.removeFileInFileArchiveByNameInStorage(filearchivename, filename);
     }
 
     public List deleteFilesbyList(List<File> files) {
         List<File> notfound = new ArrayList<>();
         for (Iterator<File> iter = files.iterator(); iter.hasNext();) {
             File file = iter.next();
-            boolean result = dao.removeFilebyNameinStorage(file.getName());
+            boolean result = dao.removeFileByNameInStorage(file.getName());
             if (result){
                 iter.remove();
             } else {
@@ -114,5 +112,4 @@ public class Logic{
         else return Arrays.asList(0, null);
     }
 
-//    добавить вывод всех архивов
 }

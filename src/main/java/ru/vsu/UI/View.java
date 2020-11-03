@@ -33,12 +33,12 @@ public class View {
     }
 
 
-    public void createFileinArchive() {
+    public void createFileInArchive() {
         System.out.println("Enter the name of archive");
         String filearchivename = scanner.next();
         System.out.println("Enter the name of new file");
         String filename = scanner.next();
-        if (logic.createFileinArchive(filearchivename, filename, new Date()))
+        if (logic.createFileinArchive(filearchivename, filename))
             System.out.println("Created successful");
         else{
             System.out.println("File with such name already exist in this FileArchive.");
@@ -67,14 +67,14 @@ public class View {
     }
 
 
-    public void deleteFileArchivebyName() {
+    public void deleteFileArchiveByName() {
         System.out.println("Enter the name of archive you want to delete");
         String filearchivename = scanner.next();
         if (logic.deleteFileArchivebyName(filearchivename))
             System.out.println("Deleted successful");
         else {
             System.out.println("There is no FileArchive with such name.");
-//            deleteFileArchivebyName();
+//            deleteFileArchiveByName();
         }
     }
 
@@ -84,7 +84,7 @@ public class View {
     }
 
 
-    public void deleteFileinFileArchivebyName() {
+    public void deleteFileInFileArchiveByName() {
         System.out.println("Enter the name of archive");
         String filearchivename = scanner.next();
         System.out.println("Enter the name of file you want to delete");
@@ -93,7 +93,7 @@ public class View {
             System.out.println("Deleted successful");
         else {
             System.out.println("There is no File with such name.");
-//            deleteFileinFileArchivebyName();
+//            deleteFileInFileArchiveByName();
         }
     }
 

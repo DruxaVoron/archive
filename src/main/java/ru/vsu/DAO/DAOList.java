@@ -36,27 +36,27 @@ public class DAOList implements DAO<FileArchive> {
         this.storage = storage;
     }
 
-    public void addFileArchivetoStorage(FileArchive fileArchive){
+    public void addFileArchiveToStorage(FileArchive fileArchive){
         storage.add(fileArchive);
     }
 
-    public boolean isFileArchiveNameinStorage(String name){
+    public boolean isFileArchiveNameInStorage(String name){
         Stream<FileArchive> stream = storage.stream();
         return stream.anyMatch(archive -> archive.getName().equals(name));
     }
 
-    public FileArchive getFileArchivebyNameinStorage(String name){
+    public FileArchive getFileArchiveByNameInStorage(String name){
         Stream<FileArchive> stream = storage.stream();
         return stream.filter(archive -> archive.getName().equals(name)).findFirst().get();
         // наверное не совсем правильно работает надо переделать
     }
 
     public List<File> getFilesinArchive(String filearchivename){
-        return getFileArchivebyNameinStorage(filearchivename).getFiles();
+        return getFileArchiveByNameInStorage(filearchivename).getFiles();
     }
 
-    public boolean removeFileArchivebyNameinStorage(String name){
-        if (!isFileArchiveNameinStorage(name))
+    public boolean removeFileArchiveByNameInStorage(String name){
+        if (!isFileArchiveNameInStorage(name))
             return false;
         else
             return storage.removeIf(fileArchive -> fileArchive.getName().equals(name));
@@ -74,7 +74,7 @@ public class DAOList implements DAO<FileArchive> {
         return result;
     }
 
-    public boolean removeFilebyNameinStorage(String name){
+    public boolean removeFileByNameInStorage(String name){
         boolean result = false;
         for (FileArchive filearchive : storage) {
             result = filearchive.getFiles().removeIf(file -> file.getName().equals(name));
@@ -84,7 +84,7 @@ public class DAOList implements DAO<FileArchive> {
         return result;
     }
 
-    public boolean removeFileinFileArchivebyNameinStorage(String filearchivename, String filename){
+    public boolean removeFileInFileArchiveByNameInStorage(String filearchivename, String filename){
         boolean result = false;
 //        storage.stream().filter(fileArchive -> fileArchive.getName().equals(filearchivename));
         for (FileArchive filearchive : storage) {

@@ -1,11 +1,7 @@
 package ru.vsu.UI;
 
-import ru.vsu.BusinessLogic.Logic;
-import ru.vsu.Domain.FileArchive;
 
-import java.util.Date;
 import java.util.InputMismatchException;
-import java.util.List;
 import java.util.Scanner;
 
 public class UI {
@@ -20,7 +16,7 @@ public class UI {
     }
 
     public void show(){
-        while (true){
+        do{
             System.out.println("MAIN MENU");
             System.out.println("1 - show all archives");
             System.out.println("2 - create new archive");
@@ -39,22 +35,22 @@ public class UI {
                         view.createFileArchive();
                         break;
                     case 3:
-                        view.createFileinArchive();
+                        view.createFileInArchive();
                         break;
                     case 4:
-                        view.deleteFileArchivebyName();
+                        view.deleteFileArchiveByName();
                         break;
                     case 5:
-                        view.deleteFileinFileArchivebyName();
+                        view.deleteFileInFileArchiveByName();
                         break;
                     case 0:
                         return;
                 }
             } catch (InputMismatchException e){
                 System.out.println("Incorrect input. Please enter any number above");
-                break;
+//                break;
             }
-        }
+        } while (scanner.hasNextInt());
     }
 
 

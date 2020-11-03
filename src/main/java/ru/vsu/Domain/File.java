@@ -7,9 +7,9 @@ public class File {
     private String name;
     private Date creationdate;
 
-    public File(String name, Date creationdate) {
+    public File(String name) {
         this.name = name;
-        this.creationdate = creationdate;
+        creationdate = new Date();
     }
 
     public String getName() {

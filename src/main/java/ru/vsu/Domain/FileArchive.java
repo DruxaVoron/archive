@@ -1,7 +1,6 @@
 package ru.vsu.Domain;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class FileArchive {
@@ -38,7 +37,7 @@ public class FileArchive {
         return files;
     }
 
-    private String filestoString(){
+    private String filesToString(){
         return files.toString();
     }
 
@@ -59,7 +58,7 @@ public class FileArchive {
     public String toString() {
         return "FileArchive{" +
                 "name='" + name + '\'' +
-                ", files=" + filestoString() +
+                ", files=" + filesToString() +
                 '}';
     }
 }

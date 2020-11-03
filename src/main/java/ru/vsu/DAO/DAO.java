@@ -1,25 +1,23 @@
 package ru.vsu.DAO;
 
 
-import ru.vsu.Domain.FileArchive;
-
 import java.util.List;
 
 public interface DAO<T> {
 
     List<T> getStorage();
 
-    boolean isFileArchiveNameinStorage(String name);
+    boolean isFileArchiveNameInStorage(String name);
 
-    void addFileArchivetoStorage(T fileArchive);
+    void addFileArchiveToStorage(T fileArchive);
 
-    T getFileArchivebyNameinStorage(String filearchivename);
+    T getFileArchiveByNameInStorage(String filearchivename);
 
-    boolean removeFileArchivebyNameinStorage(String filearchivename);
+    boolean removeFileArchiveByNameInStorage(String filearchivename);
 
-    boolean removeFilebyNameinStorage(String filename);
+    boolean removeFileByNameInStorage(String filename);
 
-    boolean removeFileinFileArchivebyNameinStorage(String filearchivename, String filename);
+    boolean removeFileInFileArchiveByNameInStorage(String filearchivename, String filename);
 
 //    здесь методы которые потом будут работать с двумя разными типами данных
 }
