@@ -1,5 +1,7 @@
 package ru.vsu.Domain;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class File {
@@ -12,20 +14,22 @@ public class File {
         creationdate = new Date();
     }
 
+    public File(String name, String date){
+        this.name = name;
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+        try {
+            creationdate = dateFormat.parse(date);
+        } catch (ParseException e) {
+            System.out.println("Date parsing failed...");
+        }
+    }
+
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public Date getCreationdate() {
         return creationdate;
-    }
-
-    public void setCreationdate(Date creationdate) {
-        this.creationdate = creationdate;
     }
 
     @Override

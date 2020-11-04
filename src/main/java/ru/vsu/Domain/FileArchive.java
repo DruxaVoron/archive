@@ -19,18 +19,8 @@ public class FileArchive {
         files.add(file);
     }
 
-    public FileArchive(String name, List<File> files) {
-        this.name = name;
-        this.files = new ArrayList<>();
-        this.files.addAll(files);
-    }
-
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public List<File> getFiles() {
@@ -41,17 +31,8 @@ public class FileArchive {
         return files.toString();
     }
 
-    public void setFiles(List<File> files) {
-        this.files = files;
-    }
-
     public void addFile(File file){
         files.add(file);
-    }
-
-
-    public void addFiles(List<File> newfiles){
-        files.addAll(newfiles);
     }
 
     @Override

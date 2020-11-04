@@ -32,10 +32,6 @@ public class DAOList implements DAO<FileArchive> {
         return storage;
     }
 
-    public void setStorage(List<FileArchive> storage) {
-        this.storage = storage;
-    }
-
     public void addFileArchiveToStorage(FileArchive fileArchive){
         storage.add(fileArchive);
     }
@@ -51,27 +47,11 @@ public class DAOList implements DAO<FileArchive> {
         // наверное не совсем правильно работает надо переделать
     }
 
-    public List<File> getFilesinArchive(String filearchivename){
-        return getFileArchiveByNameInStorage(filearchivename).getFiles();
-    }
-
     public boolean removeFileArchiveByNameInStorage(String name){
         if (!isFileArchiveNameInStorage(name))
             return false;
         else
             return storage.removeIf(fileArchive -> fileArchive.getName().equals(name));
-    }
-
-    public boolean isFileinStorage(String name){
-        boolean result = false;
-        for (Iterator<FileArchive> iter = storage.iterator(); iter.hasNext();) {
-            FileArchive filearchive = iter.next();
-            Stream<File> stream = filearchive.getFiles().stream();
-            result = stream.anyMatch(file -> file.getName().equals(name));
-            if (result)
-                break;
-        }
-        return result;
     }
 
     public boolean removeFileByNameInStorage(String name){

@@ -3,7 +3,6 @@ package ru.vsu.UI;
 import ru.vsu.BusinessLogic.Logic;
 import ru.vsu.Domain.FileArchive;
 
-import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
@@ -32,7 +31,6 @@ public class View {
 
     }
 
-
     public void createFileInArchive() {
         System.out.println("Enter the name of archive");
         String filearchivename = scanner.next();
@@ -46,27 +44,6 @@ public class View {
         }
     }
 
-
-    public void createFilesinArchive(String filearchivename, List files) {
-
-    }
-
-
-    public void createFile(String filename, Date creationdate) {
-
-    }
-
-
-    public void createFilesbyList(List files) {
-
-    }
-
-
-    public FileArchive getFileArchivebyName(String filearchivename) {
-        return null;
-    }
-
-
     public void deleteFileArchiveByName() {
         System.out.println("Enter the name of archive you want to delete");
         String filearchivename = scanner.next();
@@ -77,12 +54,6 @@ public class View {
 //            deleteFileArchiveByName();
         }
     }
-
-
-    public List deleteFileArchivesbyList(List filearchives) {
-        return null;
-    }
-
 
     public void deleteFileInFileArchiveByName() {
         System.out.println("Enter the name of archive");
@@ -97,8 +68,4 @@ public class View {
         }
     }
 
-
-    public List deleteFilesbyList(List files) {
-        return null;
-    }
 }
