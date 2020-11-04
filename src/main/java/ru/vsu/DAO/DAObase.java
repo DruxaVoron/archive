@@ -36,17 +36,15 @@ public class DAObase implements DAO<FileArchive> {
 //        }
 //    }
 
-    private Connection connect(){
+    private void connect(){
         try {
             String url = "jdbc:postgresql://localhost:5432/archive";
             String user = "postgres";
             String password = "1";
             Class.forName("org.postgresql.Driver");
             connection = DriverManager.getConnection(url, user, password);
-            return connection;
         } catch (Exception e) {
             System.out.println("Something went wrong..." + e);
-            return null;
         }
     }
 
@@ -85,8 +83,14 @@ public class DAObase implements DAO<FileArchive> {
                 }
                 else {
                     FileArchive fileArchive = new FileArchive(resultSet.getString(1));
-                    fileArchive.addFile(new File(resultSet.getString(2), resultSet.getString(3)));
-                    list.add(fileArchive);
+                    String t = resultSet.getString(2);
+                    if (resultSet.getString(2) == null){
+                        list.add(fileArchive);
+                    }
+                    else {
+                        fileArchive.addFile(new File(resultSet.getString(2), resultSet.getString(3)));
+                        list.add(fileArchive);
+                    }
                 }
             }
         } catch (Exception e) {
@@ -98,12 +102,33 @@ public class DAObase implements DAO<FileArchive> {
 
     @Override
     public boolean isFileArchiveNameInStorage(String name) {
-        return false;
+        connect();
+        String command = "SELECT EXISTS (SELECT * FROM file_archive WHERE name = '" + name + "')";
+        boolean exist = false;
+        try {
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(command);
+            while (resultSet.next()){
+                exist = resultSet.getBoolean(1);
+            }
+        } catch (Exception e) {
+            System.out.println("Something went wrong..." + e);
+        }
+        closeConnect();
+        return exist;
     }
 
     @Override
     public void addFileArchiveToStorage(FileArchive fileArchive) {
-
+        connect();
+        String command = "INSERT INTO file_archive (name) VALUES ('" + fileArchive.getName() + "')";
+        try {
+            Statement statement = connection.createStatement();
+            statement.executeUpdate(command);
+        } catch (Exception e) {
+            System.out.println("Something went wrong..." + e);
+        }
+        closeConnect();
     }
 
     @Override
@@ -126,11 +151,11 @@ public class DAObase implements DAO<FileArchive> {
         return false;
     }
 
-    public void closeConnect(){
+    private void closeConnect(){
         try {
             connection.close();
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println("Something went wrong..." + e);
         }
     }
 }
