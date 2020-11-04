@@ -6,6 +6,7 @@ import ru.vsu.Domain.FileArchive;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class DAObase implements DAO<FileArchive> {
 
@@ -59,12 +60,37 @@ public class DAObase implements DAO<FileArchive> {
             ResultSet resultSet = statement.executeQuery(command);
 
             while (resultSet.next()){
-                FileArchive fileArchive = new FileArchive(resultSet.getString(1));
-                fileArchive.addFile(new File(resultSet.getString(2), resultSet.getString(3)));
-                list.add(fileArchive);
+                Stream<FileArchive> stream = list.stream();
+                boolean exist = stream.anyMatch(fileArchive -> {
+                    try {
+                        return fileArchive.getName().equals(resultSet.getString(1));
+                    } catch (SQLException e) {
+                        System.out.println("Something went wrong..." + e);
+                        return false;
+                    }
+                });
+                stream.close();
+                if (exist){
+                    Stream<FileArchive> stream1 = list.stream();
+                    FileArchive fileArchive = stream1.filter(archive -> {
+                        try {
+                            return archive.getName().equals(resultSet.getString(1));
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                            return false;
+                        }
+                    }).findFirst().get();
+                    fileArchive.addFile(new File(resultSet.getString(2), resultSet.getString(3)));
+                    stream1.close();
+                }
+                else {
+                    FileArchive fileArchive = new FileArchive(resultSet.getString(1));
+                    fileArchive.addFile(new File(resultSet.getString(2), resultSet.getString(3)));
+                    list.add(fileArchive);
+                }
             }
-        } catch (SQLException e) {
-            System.out.println("Connection to database failed...");
+        } catch (Exception e) {
+            System.out.println("Something went wrong..." + e);
         }
         closeConnect();
         return list;
