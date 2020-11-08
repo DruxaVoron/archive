@@ -49,12 +49,6 @@ public class DAOList implements DAO<FileArchive> {
         return false;
     }
 
-    public FileArchive getFileArchiveByNameInStorage(String name){
-        Stream<FileArchive> stream = storage.stream();
-        return stream.filter(archive -> archive.getName().equals(name)).findFirst().get();
-        // наверное не совсем правильно работает надо переделать
-    }
-
     public boolean removeFileArchiveByNameInStorage(String name){
         if (!isFileArchiveNameInStorage(name))
             return false;
@@ -64,7 +58,6 @@ public class DAOList implements DAO<FileArchive> {
 
     public boolean removeFileInFileArchiveByNameInStorage(String filearchivename, String filename){
         boolean result = false;
-//        storage.stream().filter(fileArchive -> fileArchive.getName().equals(filearchivename));
         for (FileArchive filearchive : storage) {
             if (filearchive.getName().equals(filearchivename)){
                 result = filearchive.getFiles().removeIf(file -> file.getName().equals(filename));

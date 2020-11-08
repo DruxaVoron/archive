@@ -1,7 +1,6 @@
 package ru.vsu.DAO;
 
 
-import ru.vsu.Domain.File;
 import java.util.List;
 
 public interface DAO<T> {
