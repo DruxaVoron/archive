@@ -1,6 +1,7 @@
 package ru.vsu.DAO;
 
 
+import ru.vsu.Domain.File;
 import java.util.List;
 
 public interface DAO<T> {
@@ -9,15 +10,13 @@ public interface DAO<T> {
 
     boolean isFileArchiveNameInStorage(String name);
 
+    boolean isFileNameInArchive(String filearchivename, String filename);
+
     void addFileArchiveToStorage(T fileArchive);
 
-    T getFileArchiveByNameInStorage(String filearchivename);
+    void addFileToStorage(String filearchivename, String filename, String creationdate);
 
     boolean removeFileArchiveByNameInStorage(String filearchivename);
 
-    boolean removeFileByNameInStorage(String filename);
-
     boolean removeFileInFileArchiveByNameInStorage(String filearchivename, String filename);
-
-//    здесь методы которые потом будут работать с двумя разными типами данных
 }

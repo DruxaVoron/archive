@@ -39,7 +39,7 @@ public class View {
         if (logic.createFileinArchive(filearchivename, filename))
             System.out.println("Created successful");
         else{
-            System.out.println("File with such name already exist in this FileArchive.");
+            System.out.println("File with such name already exist in this FileArchive");
 //            createFileArchive();
         }
     }
@@ -63,7 +63,7 @@ public class View {
         if (logic.deleteFileinFileArchivebyName(filearchivename, filename))
             System.out.println("Deleted successful");
         else {
-            System.out.println("There is no File with such name.");
+            System.out.println("There is no File or FileArchive with such name.");
 //            deleteFileInFileArchiveByName();
         }
     }

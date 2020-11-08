@@ -29,16 +29,20 @@ public class Logic{
 
     private boolean createFileinArchive(String filearchivename, File file) {
         if (!dao.isFileArchiveNameInStorage(filearchivename)){
+//            return false;
             FileArchive fileArchive = new FileArchive(filearchivename, file);
             dao.addFileArchiveToStorage(fileArchive);
             return true;
         } else {
-            FileArchive filearchive = dao.getFileArchiveByNameInStorage(filearchivename);
-            boolean result = filearchive.getFiles().stream().anyMatch(filefounder -> filefounder.getName().equals(file.getName()));
+
+//            FileArchive filearchive = dao.getFileArchiveByNameInStorage(filearchivename);
+//            boolean result = filearchive.getFiles().stream().anyMatch(filefounder -> filefounder.getName().equals(file.getName()));
+            boolean result = dao.isFileNameInArchive(filearchivename, file.getName());
             if (result)
                 return false;
             else {
-                filearchive.addFile(file);
+//                filearchive.addFile(file);
+                dao.addFileToStorage(filearchivename, file.getName(), file.getDate());
                 return true;
             }
         }

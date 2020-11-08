@@ -24,18 +24,6 @@ public class DAObase implements DAO<FileArchive> {
         return instanse;
     }
 
-//    private void connect(){
-//        try {
-//            String url = "jdbc:postgresql://localhost:5432/archive";
-//            String user = "postgres";
-//            String password = "1";
-//            Class.forName("org.postgresql.Driver");
-//            connection = DriverManager.getConnection(url, user, password);
-//        } catch (Exception e) {
-//            System.out.println("Something went wrong..." + e);
-//        }
-//    }
-
     private void connect(){
         try {
             String url = "jdbc:postgresql://localhost:5432/archive";
@@ -93,28 +81,39 @@ public class DAObase implements DAO<FileArchive> {
                     }
                 }
             }
+            closeConnect();
         } catch (Exception e) {
             System.out.println("Something went wrong..." + e);
         }
-        closeConnect();
         return list;
     }
 
     @Override
     public boolean isFileArchiveNameInStorage(String name) {
-        connect();
         String command = "SELECT EXISTS (SELECT * FROM file_archive WHERE name = '" + name + "')";
+        return checkExisting(command);
+    }
+
+    @Override
+    public boolean isFileNameInArchive(String filearchivename, String filename) {
+        String command = "SELECT EXISTS (SELECT * FROM file WHERE name = '" + filename + "' AND (SELECT archive_id FROM file_archive WHERE name = '" + filearchivename + "') = archive_id)";
+        return checkExisting(command);
+    }
+
+    private boolean checkExisting (String command) {
+        connect();
         boolean exist = false;
         try {
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(command);
+            closeConnect();
             while (resultSet.next()){
                 exist = resultSet.getBoolean(1);
             }
         } catch (Exception e) {
             System.out.println("Something went wrong..." + e);
+            closeConnect();
         }
-        closeConnect();
         return exist;
     }
 
@@ -122,33 +121,71 @@ public class DAObase implements DAO<FileArchive> {
     public void addFileArchiveToStorage(FileArchive fileArchive) {
         connect();
         String command = "INSERT INTO file_archive (name) VALUES ('" + fileArchive.getName() + "')";
+        List<File> files = fileArchive.getFiles();
         try {
             Statement statement = connection.createStatement();
             statement.executeUpdate(command);
+            closeConnect();
+            if (files.size() != 0)
+                for (File f:files) {
+                addFileToStorage(fileArchive.getName(), f.getName(), f.getDate());
+                }
         } catch (Exception e) {
             System.out.println("Something went wrong..." + e);
+            closeConnect();
         }
-        closeConnect();
     }
 
     @Override
-    public FileArchive getFileArchiveByNameInStorage(String filearchivename) {
-        return null;
+    public void addFileToStorage(String filearchivename, String filename, String creationdate) {
+        connect();
+        try {
+            Statement statement = connection.createStatement();
+            String command = "INSERT INTO file (name, creationdate, archive_id) VALUES ('" + filename + "', '" + creationdate + "'::timestamp, (SELECT archive_id FROM file_archive WHERE name = '" + filearchivename + "'))";
+            statement.executeUpdate(command);
+            closeConnect();
+        } catch (Exception e) {
+            System.out.println("Something went wrong..." + e);
+            closeConnect();
+        }
     }
 
     @Override
     public boolean removeFileArchiveByNameInStorage(String filearchivename) {
-        return false;
-    }
-
-    @Override
-    public boolean removeFileByNameInStorage(String filename) {
-        return false;
+        if (!isFileArchiveNameInStorage(filearchivename))
+            return false;
+        else {
+            String command = "DELETE FROM file_archive WHERE name = '" + filearchivename + "'";
+            return deleting(command);
+        }
     }
 
     @Override
     public boolean removeFileInFileArchiveByNameInStorage(String filearchivename, String filename) {
-        return false;
+        if (!isFileArchiveNameInStorage(filearchivename))
+            return false;
+        else {
+            if (!isFileNameInArchive(filearchivename, filename))
+                return false;
+            else {
+                String command = "DELETE FROM file WHERE name = '" + filename + "'";
+                return deleting(command);
+            }
+        }
+    }
+
+    private boolean deleting(String command) {
+        connect();
+        try {
+            Statement statement = connection.createStatement();
+            statement.executeUpdate(command);
+            closeConnect();
+            return true;
+        } catch (SQLException e) {
+            System.out.println("Something went wrong..." + e);
+            closeConnect();
+            return false;
+        }
     }
 
     private void closeConnect(){

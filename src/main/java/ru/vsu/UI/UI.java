@@ -44,6 +44,7 @@ public class UI {
                         view.deleteFileInFileArchiveByName();
                         break;
                     case 0:
+                        System.out.println("Goodbye");
                         return;
                 }
             } catch (InputMismatchException e){

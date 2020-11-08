@@ -1,10 +1,8 @@
 package ru.vsu.DAO;
 
-import ru.vsu.Domain.File;
 import ru.vsu.Domain.FileArchive;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -36,9 +34,19 @@ public class DAOList implements DAO<FileArchive> {
         storage.add(fileArchive);
     }
 
+    @Override
+    public void addFileToStorage(String filearchivename, String filename, String creationdate) {
+
+    }
+
     public boolean isFileArchiveNameInStorage(String name){
         Stream<FileArchive> stream = storage.stream();
         return stream.anyMatch(archive -> archive.getName().equals(name));
+    }
+
+    @Override
+    public boolean isFileNameInArchive(String filearchivename, String filename) {
+        return false;
     }
 
     public FileArchive getFileArchiveByNameInStorage(String name){
@@ -52,16 +60,6 @@ public class DAOList implements DAO<FileArchive> {
             return false;
         else
             return storage.removeIf(fileArchive -> fileArchive.getName().equals(name));
-    }
-
-    public boolean removeFileByNameInStorage(String name){
-        boolean result = false;
-        for (FileArchive filearchive : storage) {
-            result = filearchive.getFiles().removeIf(file -> file.getName().equals(name));
-            if (result)
-                break;
-        }
-        return result;
     }
 
     public boolean removeFileInFileArchiveByNameInStorage(String filearchivename, String filename){

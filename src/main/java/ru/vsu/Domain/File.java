@@ -16,7 +16,7 @@ public class File {
 
     public File(String name, String date){
         this.name = name;
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         try {
             creationdate = dateFormat.parse(date);
         } catch (ParseException e) {
@@ -28,8 +28,9 @@ public class File {
         return name;
     }
 
-    public Date getCreationdate() {
-        return creationdate;
+    public String getDate() {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        return dateFormat.format(creationdate);
     }
 
     @Override
