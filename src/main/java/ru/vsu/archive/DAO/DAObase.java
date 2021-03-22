@@ -11,10 +11,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 @Component
-@Scope("prototype")
+//@Scope("prototype")
 public class DAObase implements DAO<FileArchive> {
 
-//    private static DAObase instanse;
     private Connection connection;
     @Value("${DAObase.url}")
     private String url;

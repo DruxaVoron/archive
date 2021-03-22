@@ -13,7 +13,6 @@ public class UI {
 
     private View view;
     private Scanner scanner = new Scanner(System.in);
-//    private Logic logic = new Logic();
 
     @Autowired
     public UI(View view) {
