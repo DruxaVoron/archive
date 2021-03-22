@@ -1,8 +1,8 @@
-package ru.vsu.BusinessLogic;
+package ru.vsu.archive.BusinessLogic;
 
-import ru.vsu.DAO.DAO;
-import ru.vsu.Domain.File;
-import ru.vsu.Domain.FileArchive;
+import ru.vsu.archive.DAO.DAO;
+import ru.vsu.archive.Domain.File;
+import ru.vsu.archive.Domain.FileArchive;
 
 import java.util.*;
 

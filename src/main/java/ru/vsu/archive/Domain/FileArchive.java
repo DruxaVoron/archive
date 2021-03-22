@@ -1,4 +1,4 @@
-package ru.vsu.Domain;
+package ru.vsu.archive.Domain;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,7 +1,7 @@
-package ru.vsu.UI;
+package ru.vsu.archive.UI;
 
-import ru.vsu.BusinessLogic.Logic;
-import ru.vsu.Domain.FileArchive;
+import ru.vsu.archive.BusinessLogic.Logic;
+import ru.vsu.archive.Domain.FileArchive;
 
 import java.util.List;
 import java.util.Scanner;

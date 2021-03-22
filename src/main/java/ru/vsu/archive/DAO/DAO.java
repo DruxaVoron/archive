@@ -1,4 +1,4 @@
-package ru.vsu.DAO;
+package ru.vsu.archive.DAO;
 
 
 import java.util.List;

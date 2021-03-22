@@ -1,7 +1,7 @@
-package ru.vsu.DAO;
+package ru.vsu.archive.DAO;
 
-import ru.vsu.Domain.File;
-import ru.vsu.Domain.FileArchive;
+import ru.vsu.archive.Domain.File;
+import ru.vsu.archive.Domain.FileArchive;
 
 import java.sql.*;
 import java.util.ArrayList;

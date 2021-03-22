@@ -1,4 +1,4 @@
-package ru.vsu.Domain;
+package ru.vsu.archive.Domain;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

@@ -1,4 +1,4 @@
-package ru.vsu.UI;
+package ru.vsu.archive.UI;
 
 
 import java.util.InputMismatchException;

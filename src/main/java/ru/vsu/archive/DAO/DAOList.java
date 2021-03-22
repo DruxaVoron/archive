@@ -1,6 +1,6 @@
-package ru.vsu.DAO;
+package ru.vsu.archive.DAO;
 
-import ru.vsu.Domain.FileArchive;
+import ru.vsu.archive.Domain.FileArchive;
 
 import java.util.ArrayList;
 import java.util.List;

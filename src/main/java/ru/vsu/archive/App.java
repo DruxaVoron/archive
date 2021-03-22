@@ -1,6 +1,4 @@
-package ru.vsu;
-
-import java.util.Date;
+package ru.vsu.archive;
 
 public class App {
     public static void main(String[] args) {

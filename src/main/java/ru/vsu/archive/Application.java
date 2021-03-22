@@ -1,11 +1,11 @@
-package ru.vsu;
+package ru.vsu.archive;
 
-import ru.vsu.BusinessLogic.Logic;
-import ru.vsu.DAO.DAO;
-import ru.vsu.DAO.DAObase;
-import ru.vsu.Domain.FileArchive;
-import ru.vsu.UI.UI;
-import ru.vsu.UI.View;
+import ru.vsu.archive.BusinessLogic.Logic;
+import ru.vsu.archive.DAO.DAO;
+import ru.vsu.archive.DAO.DAObase;
+import ru.vsu.archive.Domain.FileArchive;
+import ru.vsu.archive.UI.UI;
+import ru.vsu.archive.UI.View;
 
 public class Application {
 
