@@ -21,10 +21,7 @@ public class DAOList implements DAO<FileArchive> {
         }
         return instanse;
     }
-
-    private void init(){
-
-    }
+    
 
     public List<FileArchive> getStorage() {
         return storage;

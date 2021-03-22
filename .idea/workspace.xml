@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="461640ae-e843-4132-8066-4ede74c33ab6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/BusinessLogic/Logic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/BusinessLogic/Logic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/DAO/DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/DAO/DAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/DAO/DAOList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/DAO/DAOList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/DAO/DAObase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/DAO/DAObase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/Domain/File.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/Domain/File.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/UI/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/UI/UI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/UI/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/UI/View.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -76,45 +69,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ru/vsu/BusinessLogic/Logic.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/vsu/archive/SpringConfiguration.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-118">
-              <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ru/vsu/UI/View.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="65" column="64" selection-start-line="65" selection-start-column="64" selection-end-line="65" selection-end-column="64" />
-              <folding>
-                <element signature="method#showAll#0;class#View#0" />
-                <element signature="method#createFileArchive#0;class#View#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ru/vsu/Domain/FileArchive.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#toString#0;class#FileArchive#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ru/vsu/UI/UI.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="47" column="31" lean-forward="true" selection-start-line="47" selection-start-column="31" selection-end-line="47" selection-end-column="31" />
+            <state relative-caret-position="165">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -123,18 +81,33 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ru/vsu/DAO/DAOList.java">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="63" selection-start-line="63" selection-end-line="63" />
+            <state relative-caret-position="270">
+              <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/vsu/Application.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#602#603#0" expanded="true" />
-                <element signature="e#632#633#0" expanded="true" />
-                <element signature="e#699#700#0" expanded="true" />
-                <element signature="e#739#740#0" expanded="true" />
-                <element signature="e#1152#1153#0" expanded="true" />
-                <element signature="e#1180#1181#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/vsu/App.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
+              <folding>
+                <element signature="e#103#104#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -143,7 +116,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/vsu/DAO/DAObase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-230">
+            <state relative-caret-position="15">
               <caret line="16" column="20" lean-forward="true" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -163,47 +136,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ru/vsu/DAO/DAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="92" selection-start-line="20" selection-start-column="92" selection-end-line="20" selection-end-column="92" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/vsu/DAO/DAOList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="37" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ru/vsu/Application.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="258">
+              <caret line="23" column="4" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ru/vsu/Domain/File.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="21" column="36" lean-forward="true" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#toString#0;class#File#0" />
               </folding>
             </state>
           </provider>
@@ -241,14 +180,14 @@
         <option value="$PROJECT_DIR$/src/main/java/ru/vsu/DAO/databaseCommands" />
         <option value="$PROJECT_DIR$/src/main/java/ru/vsu/DAO/databaseCommands.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/vsu/Application.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/ru/vsu/Domain/File.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/vsu/BusinessLogic/Logic.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/vsu/DAO/DAOList.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/vsu/UI/UI.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/vsu/UI/View.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/vsu/DAO/DAObase.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/vsu/DAO/DAO.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/vsu/DAO/DAOList.java" />
       </list>
     </option>
   </component>
@@ -277,6 +216,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -317,7 +257,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="vsu" type="462c0819:PsiDirectoryNode" />
-              <item name="DAO" type="462c0819:PsiDirectoryNode" />
+              <item name="BusinessLogic" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="archive" type="b2602c69:ProjectViewProjectNode" />
@@ -326,13 +266,12 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="vsu" type="462c0819:PsiDirectoryNode" />
-              <item name="UI" type="462c0819:PsiDirectoryNode" />
+              <item name="DAO" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -471,22 +410,23 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98312000" />
+    <option name="totallyTimeSpent" value="98485000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-3" y="-1" width="1606" height="877" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2143774" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2195122" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Spring" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.24931881" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32833788" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32833788" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.38828337" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -661,26 +601,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/vsu/DAO/databaseCommands" />
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/vsu/DAO/databaseCommands.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/vsu/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-          <folding>
-            <element signature="e#103#104#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/vsu/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/vsu/Domain/FileArchive.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -713,22 +633,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/vsu/DAO/DAOList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="63" selection-start-line="63" selection-end-line="63" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#602#603#0" expanded="true" />
-            <element signature="e#632#633#0" expanded="true" />
-            <element signature="e#699#700#0" expanded="true" />
-            <element signature="e#739#740#0" expanded="true" />
-            <element signature="e#1152#1153#0" expanded="true" />
-            <element signature="e#1180#1181#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/vsu/BusinessLogic/Logic.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-118">
@@ -747,9 +651,56 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/vsu/DAO/DAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="92" selection-start-line="20" selection-start-column="92" selection-end-line="20" selection-end-column="92" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/vsu/archive/SpringConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/vsu/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/vsu/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#103#104#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/vsu/DAO/DAObase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-230">
+        <state relative-caret-position="15">
           <caret line="16" column="20" lean-forward="true" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -768,20 +719,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/vsu/DAO/DAO.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/vsu/DAO/DAOList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="92" selection-start-line="20" selection-start-column="92" selection-end-line="20" selection-end-column="92" />
+        <state relative-caret-position="258">
+          <caret line="23" column="4" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="37" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
         </state>
       </provider>
     </entry>
