@@ -1,9 +1,13 @@
 package ru.vsu.archive.UI;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+@Component("ui")
 public class UI {
 
 
@@ -11,6 +15,7 @@ public class UI {
     private Scanner scanner = new Scanner(System.in);
 //    private Logic logic = new Logic();
 
+    @Autowired
     public UI(View view) {
         this.view = view;
     }

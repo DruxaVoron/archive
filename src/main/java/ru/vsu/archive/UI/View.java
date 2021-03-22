@@ -1,16 +1,20 @@
 package ru.vsu.archive.UI;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import ru.vsu.archive.BusinessLogic.Logic;
 import ru.vsu.archive.Domain.FileArchive;
 
 import java.util.List;
 import java.util.Scanner;
 
+@Component
 public class View {
 
     private Scanner scanner = new Scanner(System.in);
     private Logic logic;
 
+    @Autowired
     public View(Logic logic) {
         this.logic = logic;
     }

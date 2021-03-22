@@ -1,15 +1,19 @@
 package ru.vsu.archive.BusinessLogic;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import ru.vsu.archive.DAO.DAO;
 import ru.vsu.archive.Domain.File;
 import ru.vsu.archive.Domain.FileArchive;
 
 import java.util.*;
 
+@Component
 public class Logic{
 
     private DAO<FileArchive> dao;
 
+    @Autowired
     public Logic(DAO<FileArchive> dao) {
         this.dao = dao;
     }

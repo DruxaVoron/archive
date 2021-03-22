@@ -1,5 +1,8 @@
 package ru.vsu.archive.DAO;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 import ru.vsu.archive.Domain.File;
 import ru.vsu.archive.Domain.FileArchive;
 
@@ -7,28 +10,21 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
-
+@Component
+@Scope("prototype")
 public class DAObase implements DAO<FileArchive> {
 
-    private static DAObase instanse;
+//    private static DAObase instanse;
     private Connection connection;
-
-    public DAObase() {
-//        connect();
-    }
-
-    public static DAObase getInstanse() {
-        if (instanse == null){
-            instanse = new DAObase();
-        }
-        return instanse;
-    }
+    @Value("${DAObase.url}")
+    private String url;
+    @Value("${DAObase.login}")
+    private String user;
+    @Value("${DAObase.password}")
+    private String password;
 
     private void connect(){
         try {
-            String url = "jdbc:postgresql://localhost:5432/archive";
-            String user = "postgres";
-            String password = "1";
             Class.forName("org.postgresql.Driver");
             connection = DriverManager.getConnection(url, user, password);
         } catch (Exception e) {

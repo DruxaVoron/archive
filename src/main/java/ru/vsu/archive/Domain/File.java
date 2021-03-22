@@ -1,5 +1,7 @@
 package ru.vsu.archive.Domain;
 
+import org.springframework.stereotype.Component;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
