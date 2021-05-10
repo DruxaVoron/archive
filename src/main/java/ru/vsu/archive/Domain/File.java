@@ -2,14 +2,24 @@ package ru.vsu.archive.Domain;
 
 import org.springframework.stereotype.Component;
 
+import javax.persistence.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+@Entity
+@Table(name = "file")
 public class File {
 
+    @Id
+    private int id;
+    @Column(name = "name")
     private String name;
+    @Column(name = "creationdate")
     private Date creationdate;
+    @ManyToOne
+    @JoinColumn(name = "archive_id")
+    private FileArchive fileArchive;
 
     public File(String name) {
         this.name = name;
@@ -24,6 +34,14 @@ public class File {
         } catch (ParseException e) {
             System.out.println("Date parsing failed...");
         }
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setCreationdate(Date creationdate) {
+        this.creationdate = creationdate;
     }
 
     public String getName() {

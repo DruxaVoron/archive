@@ -15,11 +15,11 @@ import java.util.stream.Stream;
 public class DAObase implements DAO<FileArchive> {
 
     private Connection connection;
-    @Value("${DAObase.url}")
+    @Value("${database.url}")
     private String url;
-    @Value("${DAObase.login}")
+    @Value("${database.login}")
     private String user;
-    @Value("${DAObase.password}")
+    @Value("${database.password}")
     private String password;
 
     private void connect(){

@@ -2,13 +2,20 @@ package ru.vsu.archive.Domain;
 
 import org.springframework.stereotype.Component;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-
+@Entity
+@Table(name = "file_archive")
 public class FileArchive {
 
+    @Id
+    private int id;
+    @Column(name = "name")
     private String name;
+
+    @OneToMany(mappedBy = "file_archive",cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<File> files;
 
     public FileArchive(String name) {
