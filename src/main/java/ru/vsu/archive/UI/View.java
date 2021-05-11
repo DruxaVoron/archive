@@ -2,6 +2,7 @@ package ru.vsu.archive.UI;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import ru.vsu.archive.BusinessLogic.BLogic;
 import ru.vsu.archive.BusinessLogic.Logic;
 import ru.vsu.archive.Domain.FileArchive;
 
@@ -12,10 +13,10 @@ import java.util.Scanner;
 public class View {
 
     private Scanner scanner = new Scanner(System.in);
-    private Logic logic;
+    private BLogic logic;
 
     @Autowired
-    public View(Logic logic) {
+    public View(BLogic logic) {
         this.logic = logic;
     }
 

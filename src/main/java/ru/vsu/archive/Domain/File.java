@@ -12,14 +12,14 @@ import java.util.Date;
 public class File {
 
     @Id
-    private int id;
+    private Long id;
     @Column(name = "name")
     private String name;
     @Column(name = "creationdate")
     private Date creationdate;
-    @ManyToOne
-    @JoinColumn(name = "archive_id")
-    private FileArchive fileArchive;
+//    @ManyToOne
+//    @JoinColumn(name = "archive_id")
+//    private FileArchive fileArchive;
 
     public File(String name) {
         this.name = name;
@@ -34,6 +34,14 @@ public class File {
         } catch (ParseException e) {
             System.out.println("Date parsing failed...");
         }
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public void setName(String name) {

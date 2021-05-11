@@ -11,7 +11,7 @@ import java.util.List;
 public class FileArchive {
 
     @Id
-    private int id;
+    private Long id;
     @Column(name = "name")
     private String name;
 
@@ -27,6 +27,14 @@ public class FileArchive {
         this.name = name;
         files = new ArrayList<>();
         files.add(file);
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
